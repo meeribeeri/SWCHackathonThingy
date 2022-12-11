@@ -1,10 +1,11 @@
-#include <SFML/Graphics.hpp>
-
+#include "Main.h"
+//flashcard thingy or growing thingy
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::RenderWindow window(sf::VideoMode(500, 500), "SWC Hackathon Thingy");
+    window.setFramerateLimit(60);
+    sf::Texture texture;
+    texture.loadFromFile("C:\\Users\\ngoal\\Downloads\\pixil-frame-0 (21).png");
 
     while (window.isOpen())
     {
@@ -16,7 +17,7 @@ int main()
         }
 
         window.clear();
-        window.draw(shape);
+        
         window.display();
     }
 
