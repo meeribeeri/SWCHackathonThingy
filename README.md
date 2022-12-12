@@ -1,6 +1,6 @@
 # SWCHackathonThingy
 
-
+Name:Something to use to take your mind off of an issue for a bit
 
 Didn't get any exe file or anything due to errors that only appeared on release build not debug, which I couldn't figure out where the issue was.
 
