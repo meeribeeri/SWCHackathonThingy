@@ -22,3 +22,4 @@ Made by: Alex Ngo
 https://youtu.be/EYQ003JmIJQ
 
 *Cirno Cursor not included
+*This was made in probably about 4 hours of actual work...
