@@ -15,3 +15,4 @@ This was gonna have more to it, but due to time, and countless errors, this is i
 Art was done by me, alongside the code.
 Made using C++ and SFML for graphics and such.
 
+Made by: Alex Ngo
