@@ -2,7 +2,7 @@
 
 Name:Something to use to take your mind off of an issue for a bit
 
-Didn't get any exe file or anything due to errors that only appeared on release build not debug, which I couldn't figure out where the issue was.
+The exe file in there probably won't work. If you want to try and figure it out, go ahead.
 
 This is a small program made to take the user's mind off of whatevery their doing, hopefully relieving stress. 
 It is also boring enough to not distract the user for long periods of time so they can actually get their work done.
