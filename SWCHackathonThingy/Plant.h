@@ -1,7 +1,13 @@
 #pragma once
-#include "Main.h"
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
 #include <array>
+#include <memory>
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
 
 
 
@@ -17,7 +23,7 @@ private:
 	sf::Sprite sprite;
 	sf::Clock internalClock;
 	sf::Texture texture;
-	sf::Vector2f pos;
+	sf::Vector2f pos = sf::Vector2f(0.f,0.f);
 	//All possible plant sprites
 	std::array<std::array<sf::IntRect, 5>, 4> sprites = { { {sf::IntRect(5,322,11,14), sf::IntRect(22,305,19,32),sf::IntRect(43,294,24,43),sf::IntRect(72,291,25,46),sf::IntRect(102,283,26,54)},
 	{sf::IntRect(5,376,11,14), sf::IntRect(22,359,19,32),sf::IntRect(43,348,24,43),sf::IntRect(72,345,25,46),sf::IntRect(102,337,26,54)},

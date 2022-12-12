@@ -1,4 +1,9 @@
-#include "Main.h"
+#include "Plant.h"
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
+#include <vector>
 //flashcard thingy or growing thingy
 
 std::vector<Plant> plants;
@@ -17,9 +22,12 @@ int main()
     window.setFramerateLimit(60);
 
     sf::Texture texture;
-    texture.loadFromFile("Images.PNG");
+    if (!texture.loadFromFile("Images.PNG")) {
+        
+     }
 
-    font.loadFromFile("ipam.ttf");
+    if (!font.loadFromFile("ipam.ttf")) {
+    }
     sf::Text topText;
     topText.setFont(font);
     topText.setString("Left click to place a plant");
@@ -34,6 +42,7 @@ int main()
 
     sf::RectangleShape background(sf::Vector2f(1000.f,1000.f));
     background.setFillColor(sf::Color(158, 107, 41));
+    plants.push_back(Plant(texture, sf::Vector2f(100.f, 100.f)));
 
     while (window.isOpen())
     {
@@ -61,7 +70,6 @@ int main()
                     if (it->spritecheck().getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))) {
 
                         toRemove = pos;
-                        std::cout << "HI" << std::endl;
                     }
                     pos++;
                 }
