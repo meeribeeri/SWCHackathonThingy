@@ -1,11 +1,19 @@
 #include "Main.h"
 //flashcard thingy or growing thingy
+
+std::vector<Plant> plants;
+
+bool placing = true;
+
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(500, 500), "SWC Hackathon Thingy");
+    sf::RenderWindow window(sf::VideoMode(1000, 1000), "SWC Hackathon Thingy");
     window.setFramerateLimit(60);
     sf::Texture texture;
-    texture.loadFromFile("C:\\Users\\ngoal\\Downloads\\pixil-frame-0 (21).png");
+    texture.loadFromFile("Images.PNG");
+    sf::RectangleShape background(sf::Vector2f(1000.f,1000.f));
+    background.setFillColor(sf::Color(158, 107, 41));
+    plants.push_back(Plant(texture, 0,sf::Vector2f(10,50)));
 
     while (window.isOpen())
     {
@@ -17,7 +25,13 @@ int main()
         }
 
         window.clear();
-        
+        window.draw(background);
+        for (auto it = begin(plants); it != end(plants); ++it) {
+            it->update();
+            window.draw(*it);
+        }
+
+
         window.display();
     }
 
