@@ -1,4 +1,4 @@
-#include "Main.h"
+#include "Plant.h"
 #include <iostream>
 
 void Plant::draw(sf::RenderTarget& target, sf::RenderStates states) const

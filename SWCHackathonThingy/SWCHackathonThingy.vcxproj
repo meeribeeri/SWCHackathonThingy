@@ -137,7 +137,6 @@
     <ClCompile Include="SWCHackathonThingy.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Main.h" />
     <ClInclude Include="Plant.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

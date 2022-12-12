@@ -12,6 +12,7 @@ bool placing = true;
 bool released = true;
 bool rightreleased = true;
 int toRemove = -1;
+int inVector = 0;
 
 sf::Font font;
 
@@ -23,10 +24,11 @@ int main()
 
     sf::Texture texture;
     if (!texture.loadFromFile("Images.PNG")) {
-        
+        std::cout << "!";
      }
 
     if (!font.loadFromFile("ipam.ttf")) {
+        std::cout << "?";
     }
     sf::Text topText;
     topText.setFont(font);
@@ -42,7 +44,6 @@ int main()
 
     sf::RectangleShape background(sf::Vector2f(1000.f,1000.f));
     background.setFillColor(sf::Color(158, 107, 41));
-    plants.push_back(Plant(texture, sf::Vector2f(100.f, 100.f)));
 
     while (window.isOpen())
     {
@@ -57,6 +58,7 @@ int main()
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && released) {
                 plants.push_back(Plant(texture, sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)));
                 released = false;
+                inVector++;
             }
             else if (!sf::Mouse::isButtonPressed(sf::Mouse::Left) && !released) {
                 released = true;
@@ -82,15 +84,16 @@ int main()
         if (toRemove != -1) {
             plants.erase(plants.begin() + toRemove);
             toRemove = -1;
+            inVector--;
         }
 
         window.clear();
         window.draw(background);
         window.draw(topText);
         window.draw(lowerText);
-        for (auto it = begin(plants); it != end(plants); ++it) {
-            it->update();
-            window.draw(*it);
+        for (int i = 0; i < inVector; ++i) {
+            plants[i].update();
+            window.draw(plants[i]);
         }
 
 
