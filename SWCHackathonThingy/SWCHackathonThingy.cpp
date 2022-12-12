@@ -44,29 +44,31 @@ int main()
                 window.close();
         }
 
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && released) {
-            plants.push_back(Plant(texture, sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)));
-            released = false;
-        }
-        else if (!sf::Mouse::isButtonPressed(sf::Mouse::Left) && !released) {
-            released = true;
-            
-        }
-
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && rightreleased) {
-            rightreleased = false;
-            int pos = 0;
-            for (auto it = begin(plants); it != end(plants); ++it) {
-                if (it->spritecheck().getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))) {
-
-                    toRemove = pos;
-                    std::cout << "HI" << std::endl;
-                }
-                pos++;
+        if (window.hasFocus()) {
+            if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && released) {
+                plants.push_back(Plant(texture, sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y)));
+                released = false;
             }
-        }
-        else if (!sf::Mouse::isButtonPressed(sf::Mouse::Right) && !rightreleased) {
-            rightreleased = true;
+            else if (!sf::Mouse::isButtonPressed(sf::Mouse::Left) && !released) {
+                released = true;
+
+            }
+
+            if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && rightreleased) {
+                rightreleased = false;
+                int pos = 0;
+                for (auto it = begin(plants); it != end(plants); ++it) {
+                    if (it->spritecheck().getGlobalBounds().contains(sf::Vector2f(sf::Mouse::getPosition(window).x, sf::Mouse::getPosition(window).y))) {
+
+                        toRemove = pos;
+                        std::cout << "HI" << std::endl;
+                    }
+                    pos++;
+                }
+            }
+            else if (!sf::Mouse::isButtonPressed(sf::Mouse::Right) && !rightreleased) {
+                rightreleased = true;
+            }
         }
 
         if (toRemove != -1) {
