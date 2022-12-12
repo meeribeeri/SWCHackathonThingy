@@ -8,6 +8,10 @@ This is a small program made to take the user's mind off of whatevery their doin
 It is also boring enough to not distract the user for long periods of time so they can actually get their work done.
 Meant to try and solve the problem of not being able to think of the solution/answer to a problem, and relieve a small amount of stress.
 Done by distracting the user for a short while, taking their mind off of what they were having issues with, hopefully relieving them of some stress this way.
-It also may make it easier to come up with/find a solution for the problem the user was originally.
+It also may make it easier to come up with/find a solution for the problem the user was originally having/tackling.
 
-This was gonna have more to it, but due to time, and countless errors, this it it.
+This was gonna have more to it, but due to time, and countless errors, this is it.
+
+Art was done by me, alongside the code.
+Made using C++ and SFML for graphics and such.
+
