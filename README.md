@@ -11,8 +11,11 @@ Done by distracting the user for a short while, taking their mind off of what th
 It also may make it easier to come up with/find a solution for the problem the user was originally having/tackling.
 
 This was gonna have more to it, but due to time, and countless errors, this is it.
+If you want to try and use this... uh... I don't know how to help that. The errors only appeared while trying to run on release, not debug.
+I was too tired to try and fix those errors.
 
 Art was done by me, alongside the code.
 Made using C++ and SFML for graphics and such.
+
 
 Made by: Alex Ngo
